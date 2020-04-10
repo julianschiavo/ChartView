@@ -281,7 +281,7 @@ class HapticFeedback {
 
 #if os(macOS)
 public extension Image {
-    enum Scale {
+    enum ScaleMac {
         case small
         case medium
         case large
@@ -291,7 +291,7 @@ public extension Image {
         self.init(systemName)
     }
     
-    public func imageScale(_ scale: Image.Scale) -> some View {
+    public func imageScale(_ scale: ScaleMac) -> some View {
         self
     }
 }
