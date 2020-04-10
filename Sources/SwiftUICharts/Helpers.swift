@@ -268,7 +268,7 @@ class HapticFeedback {
     static func playSelection() -> Void {
         WKInterfaceDevice.current().play(.click)
     }
-    #elseif os(iOS
+    #elseif os(iOS)
     //iOS implementation
     let selectionFeedbackGenerator = UISelectionFeedbackGenerator()
     static func playSelection() -> Void {
@@ -278,3 +278,21 @@ class HapticFeedback {
     static func playSelection() -> Void { }
     #endif
 }
+
+#if os(macOS)
+public extension Image {
+    enum Scale {
+        case small
+        case medium
+        case large
+    }
+    
+    public init(systemName: String) {
+        self.init(systemName)
+    }
+    
+    public func imageScale(_ scale: Image.Scale) -> some View {
+        self
+    }
+}
+#endif
